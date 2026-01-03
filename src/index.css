@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GlobalTrotters Design System - Vibrant Travel Theme */
+
+@layer base {
+  :root {
+    /* Core palette - Sunset/Ocean inspired */
+    --background: 210 25% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Vibrant Teal */
+    --primary: 174 72% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Warm Coral */
+    --secondary: 16 85% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Sunset Orange */
+    --accent: 32 95% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 25% 88%;
+    --input: 214 25% 88%;
+    --ring: 174 72% 40%;
+
+    --radius: 0.75rem;
+
+    /* Extended palette for travel */
+    --travel-sky: 199 89% 48%;
+    --travel-ocean: 195 85% 41%;
+    --travel-sunset: 16 85% 60%;
+    --travel-sand: 43 74% 66%;
+    --travel-forest: 158 64% 35%;
+    --travel-lavender: 262 52% 65%;
+
+    /* Gradients */
+    --gradient-sunset: linear-gradient(135deg, hsl(16 85% 60%) 0%, hsl(32 95% 55%) 50%, hsl(43 74% 66%) 100%);
+    --gradient-ocean: linear-gradient(135deg, hsl(195 85% 41%) 0%, hsl(174 72% 40%) 100%);
+    --gradient-sky: linear-gradient(180deg, hsl(199 89% 48%) 0%, hsl(195 85% 41%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(195 85% 25%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(222 47% 11% / 0.1);
+    --shadow-medium: 0 8px 30px -8px hsl(222 47% 11% / 0.15);
+    --shadow-glow: 0 0 40px hsl(174 72% 40% / 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 174 72% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 94%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 25% 88%;
+    --sidebar-ring: 174 72% 40%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 25% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 25% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 25% 98%;
+
+    --primary: 174 72% 50%;
+    --primary-foreground: 222 47% 8%;
+
+    --secondary: 16 85% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 32 95% 55%;
+    --accent-foreground: 222 47% 8%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 174 72% 50%;
+
+    --travel-sky: 199 89% 58%;
+    --travel-ocean: 195 85% 51%;
+    --travel-sunset: 16 85% 65%;
+    --travel-sand: 43 74% 70%;
+    --travel-forest: 158 64% 45%;
+    --travel-lavender: 262 52% 70%;
+
+    --gradient-sunset: linear-gradient(135deg, hsl(16 85% 55%) 0%, hsl(32 95% 50%) 50%, hsl(43 74% 60%) 100%);
+    --gradient-ocean: linear-gradient(135deg, hsl(195 85% 51%) 0%, hsl(174 72% 50%) 100%);
+    --gradient-sky: linear-gradient(180deg, hsl(199 89% 58%) 0%, hsl(195 85% 51%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 8%) 0%, hsl(195 85% 20%) 100%);
+
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 8px 30px -8px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(174 72% 50% / 0.4);
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 25% 98%;
+    --sidebar-primary: 174 72% 50%;
+    --sidebar-primary-foreground: 222 47% 8%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 25% 98%;
+    --sidebar-border: 217 33% 20%;
+    --sidebar-ring: 174 72% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+
+  .gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+
+  .gradient-sky {
+    background: var(--gradient-sky);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .glass {
+    @apply bg-background/80 backdrop-blur-xl border border-border/50;
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-ocean);
+  }
+
+  .ai-sparkle {
+    @apply relative;
+  }
+
+  .ai-sparkle::before {
+    content: '✨';
+    @apply absolute -top-1 -right-2 text-xs animate-pulse;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes shimmer {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+}
